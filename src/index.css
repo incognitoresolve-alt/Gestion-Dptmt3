@@ -1,0 +1,21 @@
+:root {
+  --bg: #F4F7FE; --surface: #FFFFFF; --border: #E5E7EB;
+  --accent: #00DF9A; --brand-violet: #4A15A3; --brand-blue: #2E46C7;
+  --text: #1A1A1A; --text-light: #FFFFFF; --danger: #EF4444;
+  --muted: #64748B; --radius: 12px; --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif; --sidebar-w: 260px; --transition: .2s ease;
+}
+
+*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+.app { display: flex; min-height: 100vh; }
+.sidebar { width: var(--sidebar-w); background: var(--brand-violet); color: var(--text-light); display: flex; flex-direction: column; transition: transform .3s ease; }
+.main { flex: 1; display: flex; flex-direction: column; background: var(--bg); overflow: hidden; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: var(--radius); border: none; font-weight: 600; cursor: pointer; transition: all var(--transition); }
+.btn-primary { background: var(--brand-blue); color: #fff; }
+.btn-equipe { background: linear-gradient(90deg, #00DF9A, #2E46C7, #00DF9A); background-size: 300% auto; animation: shimmer 3s linear infinite; color: #fff; border: none; padding: 14px; border-radius: 12px; font-weight: 700; cursor: pointer; }
+
+@keyframes shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+@media (max-width: 768px) { .sidebar { position: fixed; transform: translateX(-100%); z-index: 100; } .sidebar.open { transform: translateX(0); } }
